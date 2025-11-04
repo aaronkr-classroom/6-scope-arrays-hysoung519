@@ -15,6 +15,7 @@ int main()
 {
 	int data_length, str_length;
 	char data[10] = { 'h','a','p','p','y','0' };
+
 	data_length = string_length(data);
 	str_length = strlen(data);
 
@@ -22,13 +23,13 @@ int main()
 	printf("str length = %d\n", str_length);
 
 	char data2[10] = { 'a','b','c',0 };
-	char result[16];
+	char result[100] = "Hello";
 
-	printf("Result(0): &s", result);
-	strcpy_s(result, strlen(data2),data2);//result = "abc"
+	printf("Result(0): &s\n", result);
+	strcpy_s(result, sizeof(result),data2);//result = "abc"
 	
-	printf("Result(cpy): &s", result);
-	strcat_s(result, (strlen(result)+strlen("def")), "def");//result = "abcdef"
+	printf("Result(cpy): &s\n", result);
+	strcat_s(result, sizeof(result), "def");//result = "abcdef"
 
 	printf("Result(cat): &s", result);
 	
